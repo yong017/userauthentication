@@ -1,1 +1,21 @@
-<h2> hello this is freenbecky</h2>
+<div class="row mb-3">
+  <h1>Account Login</h1>
+  {{#if invalidMsg}}
+  <div>
+    {{ invalidMsg }}
+  </div>
+  {{/if}}
+  <form action="/" method="POST">
+    <label for="inputEmail" class="col-form-label">Email</label>
+    <div>
+      <input type="email" id="inputEmail" name="account" placeholder="Email">
+    </div>
+    <label for="inputPassword" class="col-form-label">Password</label>
+    <div>
+      <input type="password" id="inputPassword" name="password" placeholder="Password">
+    </div>
+    <div>
+      <button type="submit" class="btn">Sign In</button>
+    </div>
+  </form>
+</div>
