@@ -28,9 +28,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  const { email, password } = req.body
+  const { account, password } = req.body
   const User = users.find(user => {
-    return user.email.includes(email) && user.password.includes(password)
+    return user.email.includes(account) && user.password.includes(password)
   })
   //if no email -> wrong message page
   if (User) {
@@ -53,7 +53,6 @@ app.get('/wellcome', (req, res) => {
     const invalidMsg = "The password is incorrect or the email doesn't exsit."
     return res.render('index', { invalidMsg })
   }
-
 })
 
 app.listen(port, () => {
